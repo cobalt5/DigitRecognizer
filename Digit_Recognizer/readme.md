@@ -1,0 +1,1 @@
+I'm using the MNIST Digits Dataset in order to familizarize myself with neural networks

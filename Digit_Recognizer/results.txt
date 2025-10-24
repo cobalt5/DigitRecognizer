@@ -1,0 +1,26 @@
+WITHOUT VALIDATIONS
+
+2 layers of 16 nodes, 5 epochs, Accuracy: 28.1%, Avg loss: 2.193867
+2 layers of 16 nodes, 20 epochs, Accuracy: 84.4%, Avg loss: 0.552938
+
+2 layers of 512 nodes, 5 epochs, Accuracy: 70.4%, Avg loss: 1.738512
+2 layers of 512 nodes, 20 epochs, Accuracy: 89.1%, Avg loss: 0.404167
+
+4 layers of 512 nodes, 5 epochs, Accuracy: 11.4%, Avg loss: 2.293326
+4 layers of 512 nodes, 20 epochs, Accuracy: Accuracy: 61.9%, Avg loss: 1.416217
+
+As we get to the larger models, we are seeing some overfitting issues, I will try to implement validations
+
+WITH VALIDATIONS AND ALSO USING AdamW (previously I used SGD)
+
+2 layers of 16 nodes, 5 epochs, Val Accuracy: 93.1%, Val Avd loss: 0.246501, Test Accuracy: 92.0%, Test Avg Loss = 0.280902
+2 layers of 16 nodes, 20 epochs, Val Accuracy: 95.8%, Val Avg loss: 0.147406, Test Accuracy: 95.2%, Test Avg loss = 0.168414
+
+2 layers of 512 nodes, 5 epochs, Val Accuracy: 97.6%, Val Avg loss: 0.077447, Test Accuracy: 97.3%, Test Avg loss = 0.081523
+2 layers of 512 nodes, 20 epochs, Val Accuracy: 98.4%, Val Avg loss: 0.086839, Test Accuracy: 98.2%, Test Avg loss = 0.086988
+
+4 layers of 512 nodes, 5 epochs, Val Accuracy: 97.8%, Val Avg loss: 0.085709, Test Accuracy: 97.7%, Test Avg loss = 0.076273
+4 layers of 512 nodes, 20 epochs, Val Accuracy: 98.4%, Val Avg loss: 0.070980, Test Accuracy: 98.2%, Test Avg loss = 0.081417
+
+It seems that 2*512 nodes with 20 epochs performed similarly to 4*512 nodes with 20 epochs, maybe a problem such as recognizing 28*28 images of digits might not require too much reasoning, and thus larger models become redundant.
+
